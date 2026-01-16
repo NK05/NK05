@@ -1,0 +1,59 @@
+﻿{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Purple Seeds Solutions{% endblock %}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Space Grotesk"', 'sans-serif'],
+            body: ['"Manrope"', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="min-h-screen bg-[color:var(--ps-bg)] text-[color:var(--ps-text)] font-body">
+  <div class="min-h-screen flex flex-col">
+    {% if request.user.is_authenticated %}
+    <header class="border-b border-white/10 bg-[color:var(--ps-surface)]/70 backdrop-blur">
+      <div class="mx-auto max-w-6xl px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <p class="text-xs uppercase tracking-[0.3em] text-[color:var(--ps-muted)]">Purple Seeds</p>
+          <p class="font-display text-lg">Solutions Marketplace</p>
+        </div>
+        <nav class="flex flex-wrap gap-3 text-sm font-medium">
+          <a class="nav-link" href="{% url 'portal' %}">Portal</a>
+          <a class="nav-link" href="{% url 'marketplace' %}">Marketplace</a>
+          <a class="nav-link" href="{% url 'support' %}">Support</a>
+          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </nav>
+        <div class="text-xs text-[color:var(--ps-muted)]">Signed in as <span class="text-[color:var(--ps-text)] font-semibold">{{ request.user.username }}</span></div>
+      </div>
+    </header>
+    {% endif %}
+
+    <main class="flex-1 page-enter">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="border-t border-white/10 bg-[color:var(--ps-surface)]/70">
+      <div class="mx-auto max-w-6xl px-6 py-6 text-xs text-[color:var(--ps-muted)] flex flex-wrap justify-between gap-3">
+        <span>Purple Seeds Solutions Marketplace MVP</span>
+        <span>Designed for quick quote-to-deploy workflows.</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

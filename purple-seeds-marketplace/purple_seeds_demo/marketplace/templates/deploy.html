@@ -1,0 +1,79 @@
+﻿{% extends 'base.html' %}
+{% block title %}Deploy | Purple Seeds{% endblock %}
+{% block content %}
+<section class="mx-auto max-w-6xl px-6 py-10 space-y-8">
+  {% include 'components/stepper.html' with active_step=active_step %}
+
+  {% if not solution %}
+    {% url 'marketplace' as marketplace_url %}
+    {% include 'components/empty_state.html' with title='No active quote draft' description='Select a solution to begin a deployment request.' cta_url=marketplace_url cta_label='Browse Marketplace' %}
+  {% else %}
+    {% if success %}
+      <div class="card p-10 text-center space-y-4">
+        <p class="text-xs uppercase tracking-[0.4em] text-[color:var(--ps-muted)]">Deployment Request Sent</p>
+        <h1 class="text-3xl font-display">We have your request in the queue.</h1>
+        <p class="text-[color:var(--ps-muted)]">Submission ID: <span class="text-[color:var(--ps-text)] font-semibold">{{ submission_id }}</span></p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a class="btn-primary rounded-full px-6 py-3" href="{% url 'support' %}">Go to Support</a>
+          <a class="btn-secondary rounded-full px-6 py-3" href="{% url 'marketplace' %}">Start Another Quote</a>
+        </div>
+      </div>
+    {% else %}
+    <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10">
+      <div class="card p-8 space-y-6">
+        <div>
+          <p class="text-xs uppercase tracking-[0.4em] text-[color:var(--ps-muted)]">Deploy</p>
+          <h1 class="text-3xl font-display">Finalize your deployment request.</h1>
+          <p class="text-[color:var(--ps-muted)]">We will contact you to confirm launch details within 24 hours.</p>
+        </div>
+
+        <form class="space-y-4" method="post">
+          {% csrf_token %}
+          <div>
+            <label class="text-xs uppercase tracking-[0.2em]" for="id_name">Contact name</label>
+            {{ form.name }}
+          </div>
+          <div>
+            <label class="text-xs uppercase tracking-[0.2em]" for="id_org">Organization</label>
+            {{ form.org }}
+          </div>
+          <div>
+            <label class="text-xs uppercase tracking-[0.2em]" for="id_email">Email</label>
+            {{ form.email }}
+          </div>
+          <div>
+            <label class="text-xs uppercase tracking-[0.2em]" for="id_phone">Phone (optional)</label>
+            {{ form.phone }}
+          </div>
+          <div>
+            <label class="text-xs uppercase tracking-[0.2em]" for="id_preferred_date">Preferred start date</label>
+            {{ form.preferred_date }}
+          </div>
+          <div>
+            <label class="text-xs uppercase tracking-[0.2em]" for="id_notes">Deployment notes</label>
+            {{ form.notes }}
+          </div>
+          <button class="btn-primary rounded-full px-6 py-3" type="submit">Submit Deployment Request</button>
+        </form>
+      </div>
+
+      <aside class="space-y-6">
+        <div class="card p-6">
+          <h2 class="text-lg font-display">Solution Summary</h2>
+          <p class="text-sm text-[color:var(--ps-muted)] mt-2">{{ solution.title }}</p>
+          <div class="mt-4 space-y-2 text-sm text-[color:var(--ps-muted)]">
+            {% for line in quote.breakdown_lines %}
+              <div>{{ line }}</div>
+            {% endfor %}
+          </div>
+          <div class="mt-4 flex items-center justify-between text-lg font-semibold">
+            <span>Total</span>
+            <span>${{ quote.total }}</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+    {% endif %}
+  {% endif %}
+</section>
+{% endblock %}

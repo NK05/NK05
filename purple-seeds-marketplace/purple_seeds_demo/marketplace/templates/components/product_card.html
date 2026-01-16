@@ -1,0 +1,15 @@
+﻿<div class="card p-6 flex flex-col gap-4 stagger" style="animation-delay: {{ delay|default:0 }}00ms;">
+  <div>
+    <h3 class="text-lg font-display">{{ solution.title }}</h3>
+    <p class="text-sm text-[color:var(--ps-muted)] mt-2">{{ solution.short_description }}</p>
+  </div>
+  <div class="flex flex-wrap gap-2">
+    {% for tag in solution.best_for %}
+      <span class="badge text-xs px-2 py-1 rounded-full">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  <div class="flex items-center justify-between mt-auto">
+    <span class="text-sm text-[color:var(--ps-muted)]">From <span class="text-[color:var(--ps-text)] font-semibold">${{ solution.tiers.0.price }}</span></span>
+    <a class="btn-secondary px-4 py-2 rounded-full text-xs" href="{% url 'solution_detail' solution.slug %}">View Details</a>
+  </div>
+</div>

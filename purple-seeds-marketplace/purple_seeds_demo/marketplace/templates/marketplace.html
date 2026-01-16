@@ -1,0 +1,54 @@
+﻿{% extends 'base.html' %}
+{% block title %}Marketplace | Purple Seeds{% endblock %}
+{% block content %}
+<section class="mx-auto max-w-6xl px-6 py-10 space-y-8">
+  {% include 'components/stepper.html' with active_step=active_step %}
+
+  <div class="flex flex-wrap items-center justify-between gap-6">
+    <div>
+      <p class="text-xs uppercase tracking-[0.4em] text-[color:var(--ps-muted)]">Marketplace</p>
+      <h1 class="text-3xl font-display">Browse curated solution suites.</h1>
+    </div>
+    <form class="flex flex-wrap gap-3" method="get">
+      <input type="hidden" name="suite" value="{{ active_suite }}">
+      {% if active_subcat %}
+        <input type="hidden" name="subcat" value="{{ active_subcat }}">
+      {% endif %}
+      <input class="form-input rounded-full px-4 py-2" type="search" name="q" placeholder="Search solutions" value="{{ query }}">
+      <button class="btn-secondary rounded-full px-4 py-2 text-xs" type="submit">Search</button>
+    </form>
+  </div>
+
+  <div x-data="{ activeSuite: '{{ active_suite }}' }" class="space-y-6">
+    <div class="flex flex-wrap gap-3">
+      {% for suite in suites %}
+        <button
+          class="px-4 py-2 rounded-full border border-white/10 text-sm"
+          :class="activeSuite === '{{ suite.key }}' ? 'step-active' : ''"
+          @click="window.location = '?suite={{ suite.key }}'"
+          type="button"
+        >
+          {{ suite.label }}
+        </button>
+      {% endfor %}
+    </div>
+
+    <div class="flex flex-wrap gap-2">
+      <a class="px-3 py-1 rounded-full text-xs border border-white/10 {% if not active_subcat %}step-active{% endif %}" href="?suite={{ active_suite }}">All</a>
+      {% for subcat in subcategories %}
+        <a class="px-3 py-1 rounded-full text-xs border border-white/10 {% if active_subcat == subcat %}step-active{% endif %}" href="?suite={{ active_suite }}&subcat={{ subcat|urlencode }}{% if query %}&q={{ query|urlencode }}{% endif %}">{{ subcat }}</a>
+      {% endfor %}
+    </div>
+
+    {% if solutions %}
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        {% for solution in solutions %}
+          {% include 'components/product_card.html' with solution=solution delay=forloop.counter0 %}
+        {% endfor %}
+      </div>
+    {% else %}
+      {% include 'components/empty_state.html' with title='No solutions found' description='Try adjusting your search or subcategory filters.' cta_url='?suite='|add:active_suite cta_label='Reset Filters' %}
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,26 @@
+﻿{% extends 'base.html' %}
+{% block title %}Portal | Purple Seeds{% endblock %}
+{% block content %}
+<section class="mx-auto max-w-6xl px-6 py-12 space-y-10">
+  {% include 'components/stepper.html' with active_step=active_step %}
+  <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
+    <div class="space-y-6">
+      <p class="text-xs uppercase tracking-[0.4em] text-[color:var(--ps-muted)]">Portal</p>
+      <h1 class="text-4xl md:text-5xl font-display">Design, customize, and deploy a complete Purple Seeds stack.</h1>
+      <p class="text-[color:var(--ps-muted)]">Move from discovery to deployment in minutes. Build solution bundles, capture quote requests, and activate support in one flow.</p>
+      <a class="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-full" href="{% url 'marketplace' %}">
+        Explore Marketplace
+        <span aria-hidden="true">-></span>
+      </a>
+    </div>
+    <div class="card p-8 space-y-4">
+      <h2 class="text-xl font-display">Marketplace Highlights</h2>
+      <ul class="text-sm text-[color:var(--ps-muted)] space-y-3">
+        <li>Curated suites for software, hardware, and web/cloud delivery.</li>
+        <li>Guided configuration with tier + add-on pricing.</li>
+        <li>Quote requests saved locally for rapid follow-up.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}

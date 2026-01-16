@@ -1,0 +1,72 @@
+﻿{% extends 'base.html' %}
+{% block title %}Solution | Purple Seeds{% endblock %}
+{% block content %}
+<section class="mx-auto max-w-6xl px-6 py-10 space-y-8">
+  {% include 'components/stepper.html' with active_step=active_step %}
+
+  {% if not solution %}
+    {% url 'marketplace' as marketplace_url %}
+    {% include 'components/empty_state.html' with title='Solution not found' description='The requested solution is not in the marketplace catalog.' cta_url=marketplace_url cta_label='Back to Marketplace' %}
+  {% else %}
+  <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-10">
+    <div class="space-y-6">
+      <div>
+        <p class="text-xs uppercase tracking-[0.4em] text-[color:var(--ps-muted)]">{{ solution.subcategory }}</p>
+        <h1 class="text-3xl md:text-4xl font-display">{{ solution.title }}</h1>
+        <p class="text-[color:var(--ps-muted)] mt-3">{{ solution.short_description }}</p>
+      </div>
+
+      <div class="card p-6">
+        <h2 class="text-lg font-display">Key Features</h2>
+        <ul class="mt-4 space-y-2 text-sm text-[color:var(--ps-muted)]">
+          {% for feature in solution.features %}
+            <li>- {{ feature }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="card p-6">
+        <h2 class="text-lg font-display">Best for</h2>
+        <div class="mt-4 flex flex-wrap gap-2">
+          {% for tag in solution.best_for %}
+            <span class="badge text-xs px-3 py-1 rounded-full">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <div class="card p-6">
+        <h2 class="text-lg font-display">Pricing Tiers</h2>
+        <div class="mt-4 space-y-3">
+          {% for tier in solution.tiers %}
+            <div class="flex items-center justify-between border-b border-white/10 pb-2">
+              <span>{{ tier.name }}</span>
+              <span class="font-semibold">${{ tier.price }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="card p-6">
+        <h2 class="text-lg font-display">Add-ons</h2>
+        <div class="mt-4 space-y-3">
+          {% if solution.addons %}
+            {% for addon in solution.addons %}
+              <div class="flex items-center justify-between border-b border-white/10 pb-2">
+                <span>{{ addon.name }}</span>
+                <span class="font-semibold">${{ addon.price }}</span>
+              </div>
+            {% endfor %}
+          {% else %}
+            <p class="text-sm text-[color:var(--ps-muted)]">No add-ons for this solution.</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <a class="btn-primary w-full text-center rounded-full px-6 py-3" href="{% url 'customize' solution.slug %}">Customize This Solution</a>
+    </div>
+  </div>
+  {% endif %}
+</section>
+{% endblock %}

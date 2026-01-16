@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# Virtual env
+venv/
+.env
+
+# Django
+staticfiles/
+media/
+
+# Node (if added later)
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Runtime storage
+storage/quote_requests.json
