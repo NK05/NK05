@@ -3,10 +3,6 @@
 </p>
 
 <p align="center">
-  <strong>Turning complex ideas into practical software.</strong>
-</p>
-
-<p align="center">
   <a href="#selected-work">Explore selected work</a> · <a href="#what-i-work-across">What I do</a> · <a href="https://zw.linkedin.com/in/nakaimashamba">Connect on LinkedIn</a>
 </p>
 
