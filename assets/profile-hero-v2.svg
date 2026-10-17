@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 250" role="img" aria-labelledby="t d">
+<title id="t">Nakai Mashamba — software developer and product builder</title>
+<desc id="d">Minimal dark editorial banner with name, role and a teal geometric accent</desc>
+<defs>
+<linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#0B1424"/><stop offset="1" stop-color="#17273C"/></linearGradient>
+<linearGradient id="line" x1="0" x2="1"><stop stop-color="#5BE2C6"/><stop offset="1" stop-color="#7EAEF3"/></linearGradient>
+</defs>
+<rect width="1200" height="250" rx="18" fill="url(#bg)"/>
+<rect x="55" y="43" width="59" height="4" rx="2" fill="url(#line)"/>
+<text x="55" y="102" fill="#F6F8FE" font-family="Segoe UI,Arial,sans-serif" font-size="56" font-weight="700" letter-spacing="-1.3">Nakai Mashamba</text>
+<text x="57" y="150" fill="#B9CADB" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="500">Software Developer &amp; Product Builder</text>
+<text x="57" y="205" fill="#72DCCB" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="600" letter-spacing="2.7">APPLICATIONS   /   BUSINESS PLATFORMS   /   DATA PRODUCTS</text>
+<g fill="none" stroke="#5BE2C6" opacity=".3" stroke-width="2">
+<circle cx="1040" cy="125" r="100"/>
+<circle cx="1040" cy="125" r="73"/>
+<circle cx="1040" cy="125" r="44"/>
+</g>
+<g fill="none" stroke="#8EBDF5" stroke-width="2.5" stroke-linecap="round">
+<path d="M1011 124l20 20 39-42"/>
+<path d="M905 63h22 M1149 189h21" opacity=".6"/>
+</g>
+</svg>
