@@ -1,92 +1,92 @@
-<div align="center">
+<p align="center">
+  <img src="./assets/portfolio-hero-v3.svg" width="100%" alt="Nakai Mashamba — Software Developer and Product Builder; applications, business platforms, data products" />
+</p>
 
-![Nakai Mashamba — Software Developer & Product Builder](./assets/profile-hero-v2.svg)
+<p align="center">
+  <strong>Turning complex ideas into practical software.</strong>
+</p>
 
-**Applications · Business Platforms · Data Products**
+<p align="center">
+  <a href="#selected-work">Explore selected work</a> · <a href="#what-i-work-across">What I do</a> · <a href="https://zw.linkedin.com/in/nakaimashamba">Connect on LinkedIn</a>
+</p>
 
-[**Selected work**](#selected-work) · [**Connect on LinkedIn**](https://zw.linkedin.com/in/nakaimashamba)
+I design and develop **applications, business platforms and data-driven products**, from the first conversations about a problem to the architecture, interfaces and logic that bring a solution together.
 
-</div>
+My background in **Industrial and Manufacturing Engineering** influences how I work: understand the process, think through the constraints and build the pieces into a system that makes sense. My experience spans **accounting and education platforms, vendor administration, financial workflows, full-stack applications and analytics**.
 
-## Turning complex ideas into practical software.
-
-I design and develop **applications and digital products**, bringing together the architecture, business logic and user experience that make software useful.
-
-My work spans **business-management platforms, accounting and financial workflows, vendor administration, APIs, databases, interfaces and data-driven tools**. With a background in **Industrial and Manufacturing Engineering**, I approach development by understanding how the whole process works—not only what appears on the screen.
-
-My strongest hands-on work is currently in full-stack and business application development. I'm also expanding into **mobile and cross-platform apps** as the next part of that journey.
-
----
+I enjoy both sides of development: the technical detail behind a system and the decisions that make it useful to real people.
 
 ## Selected work
 
-### 01 · Education & Financial Operations Platform
+### 01 / Education & Financial Operations
 
-**Business systems · Accounting · Multi-tenant workflows**  
-`Python` · `Django REST Framework` · `Next.js` · `TypeScript` · **In development**
+[![Conceptual illustration of education and accounting workflows](./assets/case-education.svg)](./work/education-accounting.md)
 
-Working with partners on an education and business-management platform. Its accounting foundation implements **balanced journal entries, controlled posting and reversals, financial-period checks and organisation-scoped reporting**.
+**The challenge:** Build reliable operational and financial workflows for an education/business platform.
 
-The interesting part isn't just the dashboard: it's making sure operational and financial workflows follow consistent rules.
+**My work:** Product and application development with partners, including backend accounting foundations for **balanced journals, controlled posting and reversals, financial-period checks and organisation-scoped reporting**.
+
+`Python` · `Django REST Framework` · `Next.js` · `TypeScript` · *In development*
 
 **[Explore the engineering case →](./work/education-accounting.md)**
 
----
+### 02 / Approved Vendor List Platform
 
-### 02 · Approved Vendor List (AVL) Platform
+[![Conceptual illustration of vendor review and publication workflow](./assets/case-avl.svg)](./work/approved-vendor-list.md)
 
-**Vendor lifecycle · Review and approval · Controlled publication**  
-`Python` · `Django REST Framework` · `Next.js` · `TypeScript` · **Private platform work**
+**The challenge:** Manage vendor applications and approvals without mixing private administrative records with public listings.
 
-A vendor administration system with distinct stages for application capture, supporting evidence, review, activation and public listing. The software separates **internal decisions and private records** from the information permitted in a public directory.
+**My work:** Development of structured **application, evidence-review, activation and publication workflows**, with role-based controls and a deliberately limited public directory.
+
+`Python` · `Django REST Framework` · `Next.js` · `TypeScript` · *Private platform work*
 
 **[Explore the workflow case →](./work/approved-vendor-list.md)**
 
----
+### 03 / Financial Application Workflow
 
-### 03 · Financial Application Workflow
+![Conceptual illustration of a simulated lending application workflow](./assets/case-finance.svg)
 
-**Application journeys · Repayment schedules · Operational reporting**  
-`Next.js` · `TypeScript` · **Fictional-data prototype**
+**The challenge:** Make a multi-stage financial journey understandable, with consistent schedules, decisions and records.
 
-An interactive lending workflow demonstration covering application stages, decisions, schedules, repayment allocation and reporting states. This is a software prototype using simulated records, not an operational lending service.
+**My work:** An interactive application prototype covering lending stages, **repayment schedules, allocation logic and reporting views**, using fictional data and simulated operations.
 
----
+`Next.js` · `TypeScript` · *Interactive prototype*
 
-### 04 · CareSignal
+### 04 / CareSignal — Full-Stack Prototype
 
-**Full-stack workflow · Deterministic rules · Human review**  
-`Next.js` · `FastAPI` · `Python` · `TypeScript` · **Public synthetic-data prototype**
+[![Conceptual illustration of CareSignal confirmation and review workflow](./assets/case-caresignal.svg)](https://github.com/NK05/caresignal-demo)
 
-A confirmation-led workflow in which provisional submissions are kept separate from confirmed records, followed by rule-based tasks and human-reviewed responses. It demonstrates application and backend design; it is **not a clinical service**.
+**The challenge:** Keep incoming information provisional until it is confirmed, then coordinate a traceable review process.
+
+**My work:** A public full-stack prototype with **confirmation-gated records, deterministic rule evaluation, review tasks and human-controlled responses**.
+
+`Next.js` · `FastAPI` · `Python` · `TypeScript` · *Synthetic, nonclinical demonstration*
 
 **[Explore the source code →](https://github.com/NK05/caresignal-demo)**
 
----
-
 ## What I work across
 
-| Applications & product development | Systems & data |
+| Applications & products | Backend, data & engineering |
 | :--- | :--- |
-| Full-stack applications and portals | Backend services and REST APIs |
-| Interfaces and user journeys | SQL databases and reporting |
-| Business workflow and product design | Data analysis and practical decision tools |
-| Iterative development and integration | Domain validation and software testing |
+| Full-stack applications and digital platforms | APIs, services and business logic |
+| User portals, dashboards and workflows | Databases, reporting and SQL |
+| Product architecture and iterative development | Validation, testing and system boundaries |
+| Business process and requirements analysis | Data analysis and practical decision tools |
 
-**Technologies:** Python · Django/DRF · FastAPI · JavaScript/TypeScript · React/Next.js · SQL · PostgreSQL · Git · Power BI
+**Core technologies:** Python · Django/DRF · FastAPI · JavaScript/TypeScript · React/Next.js · PostgreSQL · SQL · Git · Power BI
 
-**Exploring next:** Mobile and cross-platform application development.
+**Where I'm growing:** Mobile and cross-platform application development, alongside more capable business and data products.
 
 ## Beyond the code
 
-My work also involves product planning, technology leadership and collaboration. I've helped lead innovation activities, including a hackathon programme in collaboration with NUST's Innovation and Business Development department, and have been involved in data-science mentoring through ALX.
+I've worked across technical development, product planning and collaboration, including technology leadership, **ALX data-science mentoring** and leading a hackathon programme in collaboration with **NUST's Innovation and Business Development department**.
 
-I enjoy working where technical decisions meet real operational needs—and where a good software product depends on understanding the people who will use it.
+That mix of engineering, business understanding and working with people is central to how I approach a project.
 
-## Let's connect
+## Let's build something useful
 
-I'm open to conversations about **custom software, full-stack applications, product development, data-driven solutions and collaborative projects**.
+I'm interested in **custom software, applications, product development, data-driven solutions and thoughtful technical collaborations**.
 
 **[Connect with me on LinkedIn →](https://zw.linkedin.com/in/nakaimashamba)**
 
-<sub>Some projects are private or in development. These summaries describe bounded, demonstrable work; code, sensitive client information and unreleased product details stay private. Product demonstrations will be added as they are prepared.</sub>
+<sub>Portfolio artwork is conceptual, not an application screenshot. Selected work includes private and in-development projects; sensitive source and client records stay private. Verified product demonstrations will be added progressively.</sub>
