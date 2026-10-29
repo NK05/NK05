@@ -1,0 +1,7 @@
+local-output/
+__pycache__/
+*.pyc
+.env
+.env.*
+*.secret
+*.token
