@@ -1,0 +1,7 @@
+user_id,display_name,user_principal_name,account_enabled,last_successful_sign_in,assigned_licenses
+demo-001,Thando Ncube,thando@example.invalid,true,2026-10-27T08:10:00Z,SKU-BUSINESS-PREMIUM
+demo-002,Lindiwe Dube,lindiwe@example.invalid,true,2026-05-03T10:15:00Z,SKU-BUSINESS-STANDARD
+demo-003,Peter Moyo,peter@example.invalid,false,2026-02-12T12:00:00Z,SKU-BUSINESS-BASIC
+demo-004,Neo Sibanda,neo@example.invalid,true,,SKU-BUSINESS-BASIC
+demo-005,Ruth Mlambo,ruth@example.invalid,false,2026-03-30T07:00:00Z,
+demo-006,Farai Dlamini,farai@example.invalid,true,2026-10-28T15:41:00Z,SKU-BUSINESS-STANDARD;SKU-POWERBI-PRO
